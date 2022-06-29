@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan 19</title>
+    <style>
+        .hapus{
+  background-color: red;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+        .edit{
+    background-color: green;
+    color: white;
+    padding: 5px 5px;
+     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+        }
+        .tambah{
+            background-color: blue;
+    color: white;
+    padding: 10px 1px;
+     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+        }
+        table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+        
+    </style>
+</head>
+<body>
+    <table>
+        <head>
+        <tr>
+            <th>ID</th>
+            <th>String</th>
+            <th>integer</th>
+            <th>float</th>
+            <th>date</th>
+            <th>boolean</th>
+            <th>action</th>
+        </tr>
+    </head>
+        <tbody>
+            <% rows.forEach((item, index)=> {%>
+                <tr>
+                    <td><%=index+1 %></td>
+                    <td><%= item.string%></td>
+                    <td><%= item.integer%></td>
+                    <td><%= item.float%></td>
+                    <td><%= item.date%></td>
+                    <td><%= item.boolean%></td>
+                <td>
+                    <a class ="edit" href="/edit/<%=index%>">edit</a>
+                    <a class="hapus" href="/delet/<%=index%>">hapus</a>
+                </td>
+                </tr>
+                <%}) %>
+        </tbody>
+    </table>
+    <a  class ="tambah" href="tambah"> tambah</a>
+</body>
+</html>
