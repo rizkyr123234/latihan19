@@ -40,7 +40,7 @@ app.get('/edit/:id', (req,res)=>{
 })
 app.post('/edit/:id',(req,res)=>{
   
-  data1[req.params.id] ={string:req.body.string, integer: req.body.integer, float :req.body.float, date: req.body.date, bolean : req.body.bolean}
+  data1[req.params.id] ={string:req.body.string, integer: req.body.integer, float :req.body.float, date: req.body.date, boolean : req.body.boolean}
   fs.writeFileSync('data.json', JSON.stringify(data1))
   res.redirect('/') 
 })
